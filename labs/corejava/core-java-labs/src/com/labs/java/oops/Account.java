@@ -1,4 +1,4 @@
-
+package com.labs.java.oops;
 
 // Encapsulation
 
@@ -22,6 +22,7 @@ public abstract class Account {
 
     // overloaded constructor
     public Account(int id, String name, String type) {
+        System.out.println("Account overloaded constructor called...");
         this.id = id;
         this.name = name;
         this.type = type;
@@ -54,7 +55,7 @@ public abstract class Account {
 
     // methods / behaviours
     public void openAccount() {
-        System.out.println("Default implementation for Open Account");
+        System.out.println("Default implementation for Open com.labs.java.oops.Account");
     }
 
     public abstract void closeAccount();

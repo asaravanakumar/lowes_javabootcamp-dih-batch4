@@ -1,4 +1,6 @@
-public class LoanAccount extends Account {
+package com.labs.java.oops;
+
+public class LoanAccount extends Account implements PreClosable {
 
     private double loanAmount;
     private int tenure;
@@ -40,17 +42,22 @@ public class LoanAccount extends Account {
 
     @Override
     public void openAccount() {
-        System.out.println("Opening Loan Account");
+        System.out.println("Opening Account");
     }
 
     @Override
     public void closeAccount() {
-        System.out.println("Closing Loan Account");
+        System.out.println("Closing Account");
     }
 
     @Override
     public void printAccountDetails() {
         System.out.println(this.getId() + " " + this.getName() + " " + this.getLoanAmount() + " " + this.getTenure() + " " + this.getRoi());
 
+    }
+
+    @Override
+    public void preClose() {
+        System.out.println("Pre-closing Loan Account");
     }
 }

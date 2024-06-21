@@ -1,3 +1,5 @@
+package com.labs.java.core;
+
 import java.util.Scanner;
 
 public class TemperatureConverter {
@@ -5,7 +7,7 @@ public class TemperatureConverter {
     public static void main(String[] args) {
         String choice = null;
 
-        do {
+        loop: do {
             System.out.println("Welcome to Temperature Converter");
             System.out.println("1. Celcius to Farenheit"); // => F = (9/5)C + 32
             System.out.println("2. Farenheit to Celcius"); // => C = (F - 32) × 5/9
@@ -40,7 +42,7 @@ public class TemperatureConverter {
             System.out.print("Do you want to continue? (Yes/No) ");
             choice = in.next();
 
-        }while(choice.equals("Yes")) ;
+        } while(choice.equals("Yes")) ;
 
     }
 

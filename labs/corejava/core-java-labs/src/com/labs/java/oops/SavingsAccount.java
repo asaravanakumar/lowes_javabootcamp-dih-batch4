@@ -1,8 +1,8 @@
+package com.labs.java.oops;
+
 public class SavingsAccount extends Account {
 
     protected double balance; // 8 bytes
-
-
 
     public SavingsAccount() {
         System.out.println("Default Savings Account constructor called..");
@@ -11,6 +11,7 @@ public class SavingsAccount extends Account {
     public SavingsAccount(int id, String name, String type, double balance) {
         super(id, name, type);
         this.balance = balance;
+        System.out.println("Savings Account overloaded constructor called..");
     }
 
     // Annotation

@@ -1,4 +1,6 @@
-public class DepositAccount extends Account{
+package com.labs.java.oops;
+
+public class DepositAccount extends Account implements PreClosable, AutoRenewable {
 
     private double principal;
     private int tenure;
@@ -51,5 +53,15 @@ public class DepositAccount extends Account{
     @Override
     public void printAccountDetails() {
         System.out.println(this.getId() + " " + this.getName() + " " + this.getPrincipal() + " " + this.getTenure() + " " + this.getRoi());
+    }
+
+    @Override
+    public void preClose() {
+        System.out.println("Pre-closing Deposit Account");
+    }
+
+    @Override
+    public void autoRenew() {
+        System.out.println("Auto-closing Deposit Account");
     }
 }

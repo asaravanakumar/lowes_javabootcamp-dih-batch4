@@ -1,3 +1,5 @@
+package com.labs.java.core;
+
 public class CelciusToFarenheitConverter {
     public static void main(String[] args) {
         // byte -> short -> int -> long -> float -> double
