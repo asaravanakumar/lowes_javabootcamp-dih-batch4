@@ -29,7 +29,7 @@ public class AccountMain {
 
 
 //        SavingsAccount savings = new SavingsAccount();
-        Account savings = new SavingsAccount(100, "Neha", "Savings", 5000.0);
+        Account savings = new SavingsAccount(100, "Neha", AccountType.SAVINGS, 5000.0);
         savings.openAccount();
 //        savings.setId(100);
 //        savings.setName("Ajay");
@@ -38,18 +38,23 @@ public class AccountMain {
         savings.closeAccount();
 
 
-        DepositAccount deposit = new DepositAccount(101, "Amit", "Deposit", 500000.0, 30, 7.0);
+        DepositAccount deposit = new DepositAccount(101, "Amit", AccountType.DEPOSIT, 500000.0, 30, 7.0);
         deposit.openAccount();
         printAccountDetails(deposit);
         deposit.preClose();
+        deposit.autoRenew();
         deposit.closeAccount();
 
 
-        LoanAccount loan = new LoanAccount(102, "Alpha", "Loan", 500000.0, 120, 9.5);
+        LoanAccount loan = new LoanAccount(102, "Alpha", AccountType.LOAN, 500000.0, 120, 9.5);
         loan.openAccount();
         printAccountDetails(loan);
         loan.preClose();
         loan.closeAccount();
+
+        Account.AUTO_RENEW_IN_MONTHS = 40;
+
+//        System.out.println(AutoRenewable.AUTO_RENEW_IN_MONTHS);
     }
 
 

@@ -4,12 +4,14 @@ package com.labs.java.oops;
 
 public abstract class Account {
 
+    public static int AUTO_RENEW_IN_MONTHS = 30;
+
     // Access Modifiers - default, private, protected, public
 
     // properties
     protected int id; // 4 bytes
     protected String name; //
-    protected String type;
+    protected AccountType type;
 
     // default
     public Account() {
@@ -21,7 +23,7 @@ public abstract class Account {
     }
 
     // overloaded constructor
-    public Account(int id, String name, String type) {
+    public Account(int id, String name, AccountType type) {
         System.out.println("Account overloaded constructor called...");
         this.id = id;
         this.name = name;
@@ -44,11 +46,11 @@ public abstract class Account {
         this.name = name;
     }
 
-    public String getType() {
+    public AccountType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(AccountType type) {
 
         this.type = type;
     }

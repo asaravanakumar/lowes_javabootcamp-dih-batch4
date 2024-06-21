@@ -8,8 +8,9 @@ public class SortNumbers {
 
         int[] input = {30, 50, 20, 10, 50, 40};
 
-        for(int i = 0; i < input.length; i++) {
-            for(int j = i + 1; j < input.length; j++) {
+        //O(n2)
+        for(int i = 0; i < input.length; i++) { // O(n)
+            for(int j = i + 1; j < input.length; j++) { // O(n)
                 if(input[i] > input[j]) {
                     int temp = input[i];
                     input[i] = input[j];

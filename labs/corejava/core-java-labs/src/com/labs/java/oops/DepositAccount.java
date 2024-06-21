@@ -9,7 +9,7 @@ public class DepositAccount extends Account implements PreClosable, AutoRenewabl
     public DepositAccount() {
     }
 
-    public DepositAccount(int id, String name, String type, double principal, int tenure, double roi) {
+    public DepositAccount(int id, String name, AccountType type, double principal, int tenure, double roi) {
         super(id, name, type);
         this.principal = principal;
         this.tenure = tenure;

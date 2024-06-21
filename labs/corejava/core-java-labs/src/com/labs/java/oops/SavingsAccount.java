@@ -8,7 +8,7 @@ public class SavingsAccount extends Account {
         System.out.println("Default Savings Account constructor called..");
     }
 
-    public SavingsAccount(int id, String name, String type, double balance) {
+    public SavingsAccount(int id, String name, AccountType type, double balance) {
         super(id, name, type);
         this.balance = balance;
         System.out.println("Savings Account overloaded constructor called..");
@@ -31,7 +31,7 @@ public class SavingsAccount extends Account {
     // 3. Return type should be same type or sub-type
     @Override
     public void printAccountDetails() {
-        System.out.println(this.getId() + " " + this.getName() + " " + this.getBalance());
+        System.out.println(this.getId() + " " + this.getName() + " " + this.getBalance() + " " + this.getType().getId());
     }
 
     public void printAccountDetails(boolean printAllDetails) {

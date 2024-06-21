@@ -9,7 +9,7 @@ public class LoanAccount extends Account implements PreClosable {
     public LoanAccount() {
     }
 
-    public LoanAccount(int id, String name, String type, double principal, int tenure, double roi) {
+    public LoanAccount(int id, String name, AccountType type, double principal, int tenure, double roi) {
         super(id, name, type);
         this.loanAmount = principal;
         this.tenure = tenure;
