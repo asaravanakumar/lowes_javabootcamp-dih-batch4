@@ -1,0 +1,6 @@
+100,iPhone 15,SmartPhone,10,70000.0
+101,Sony OLED TV,SmartTv,5,80000.0
+102,Samsung Galazy S24,SmartPhone,5,75000.0
+103,OnePlus Nord,SmartPhone,10,50000.0
+104,Samsung OLED TV,SmartTv,3,90000.0
+105,Lenovo Thinkpad,Laptop,3,90000.0
