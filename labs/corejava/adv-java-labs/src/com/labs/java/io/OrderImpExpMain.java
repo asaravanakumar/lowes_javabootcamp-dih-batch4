@@ -47,10 +47,22 @@ public class OrderImpExpMain {
             while(in.hasNextLine()) {
 
                 String orderStr = in.nextLine();
-                System.out.println(orderStr);
-                impCounter++;
+//                System.out.println(orderStr);
+
                 // TODO: create order object
+                //100,iPhone 15,SmartPhone,10,70000.0
+                String[] fields = orderStr.split(",");
+                int id = Integer.parseInt(fields[0]);
+                String desc = fields[1];
+                String category = fields[2];
+                int qty = Integer.parseInt(fields[3]);
+                double price = Double.parseDouble(fields[4]);
+
+                Order order = new Order(id, desc, category, qty, price);
                 // TODO: add into orders map
+
+                create(order);
+                impCounter++;
 
             }
         }catch (FileNotFoundException e) {
@@ -70,7 +82,15 @@ public class OrderImpExpMain {
             // TODO: LOGIC TO EXPORT ORDER DATA
             for(Order order: orders.values()) {
                 // TODO: create order detail delimited by comma from order object
+                StringBuilder orderStr = new StringBuilder();
+                orderStr.append(order.getId()).append(",")
+                        .append(order.getDescription()).append(",")
+                        .append(order.getCategory()).append(",")
+                        .append(order.getQuantity()).append(",")
+                        .append(order.getPrice()).append("\n");
+
                 // TODO: write into file
+                writer.write(orderStr.toString());
                 expCounter++;
             }
         }catch (FileNotFoundException e) {
