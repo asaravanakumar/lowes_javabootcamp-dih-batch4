@@ -49,8 +49,15 @@ public class OrderValidationLamExpMain {
 
     private static void update(int id, Order order) {
 
+        // Lambda Expression assigned into Functional Interface type and passed to function
         Predicate<Order> condition = ord -> { return id > 0 && ord.getCategory() != null && !ord.getCategory().isBlank() && ord.getQuantity() > 0; };
-        boolean flag = validateOrder(condition, order);
+//        boolean flag = validateOrder(condition, order);
+
+        // Passing Lambda Expression as argument
+//        boolean flag = validateOrder(ord -> { return id > 0 && ord.getCategory() != null && !ord.getCategory().isBlank() && ord.getQuantity() > 0;}, order);
+
+        // Method Reference example
+        boolean flag = validateOrder(OrderValidationLamExpMain::performValidation, order);
 
         if(!flag) {
             System.out.println("Order updation failed");
@@ -69,6 +76,10 @@ public class OrderValidationLamExpMain {
         System.out.println("Order updated successfully");
     }
 
+    private static boolean performValidation(Order ord) {
+        return ord.getCategory() != null && !ord.getCategory().isBlank() && ord.getQuantity() > 0;
+    }
+
     private static boolean validateOrder(Predicate<Order> condition, Order order) {
         return condition.test(order);
     }
@@ -83,4 +94,8 @@ public class OrderValidationLamExpMain {
             System.out.format("%5s %20s %20s %15s %10s\n", order.getId(), order.getDescription(), order.getCategory(), order.getQuantity(), order.getPrice());
         }
     }
+
+//    private static Predicate<Order> getValidationRules() {
+//        return (Order ord) -> {return ord.getCategory() != null && !ord.getCategory().isBlank() && ord.getQuantity() > 0;};
+//    }
 }
