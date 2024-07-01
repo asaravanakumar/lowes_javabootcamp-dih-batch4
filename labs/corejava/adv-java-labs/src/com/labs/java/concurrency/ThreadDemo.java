@@ -7,7 +7,8 @@ public class ThreadDemo {
 
         Task t1 = new Task();
         t1.setName("T1");
-        t1.start();
+        t1.run(); // won't create as separate thread. runs as part of main thread
+//        t1.start(); // submits thread to scheduler and runs as separate thread
 
         Task t2 = new Task();
         t2.setName("T2");
