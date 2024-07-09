@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean Definition -->
+    <!--
+    //        Greetings greetings1 = new Greetings("Welcome to Spring!!!");
+    -->
+    <bean id="greetings1" class="com.labs.spring.core.Greetings">
+        <constructor-arg name="message" value="Welcome to Spring Training!!!" />
+    </bean>
+
+    <!--
+    //        Greetings greetings2 = new Greetings();
+//        greetings2.setMessage("Thank you!!!");
+    -->
+    <bean id="greetings2" class="com.labs.spring.core.Greetings">
+        <property name="message" value="Thank You!!!" />
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
