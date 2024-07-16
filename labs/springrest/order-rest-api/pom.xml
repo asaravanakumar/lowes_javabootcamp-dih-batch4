@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.labs.spring.rest</groupId>
+    <artifactId>order-rest-api</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <java-version>17</java-version>
+        <org.springframework-version>5.3.28</org.springframework-version>
+        <javax.servlet-api-version>4.0.1</javax.servlet-api-version>
+        <jackson.library>2.9.5</jackson.library>
+        <hibernate-version>5.6.15.Final</hibernate-version>
+        <mysql-connector-java-version>8.0.30</mysql-connector-java-version>
+        <maven-war-plugin-version>3.4.0</maven-war-plugin-version>
+    </properties>
+
+    <!--
+        1. Spring Web MVC
+        2. Servlet
+        3. Jackson - JSON
+        4. Jackson - XML
+        5. Hibernate - JPA
+        6. Spring ORM
+        7. MySQL
+    -->
+
+    <dependencies>
+        <!-- Spring MVC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api-version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSON to Object mapping -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.library}</version>
+        </dependency>
+
+        <!-- XML Parsing Support -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.library}</version>
+        </dependency>
+
+        <!-- Spring ORM -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java-version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>order-rest-api</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin-version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
