@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional
 public class OrderDaoJpaImpl implements OrderDao {
 
-    @Autowired
+//    @Autowired
 //    private EntityManagerFactory entityManagerFactory;
 
     @PersistenceContext

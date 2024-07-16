@@ -4,10 +4,7 @@ import com.labs.spring.rest.model.Order;
 import com.labs.spring.rest.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -45,5 +42,25 @@ public class OrderController {
         return orderService.viewAll();
     }
 
+    @GetMapping(path="/orders/{id}")
+    public Order get(@PathVariable int id) {
+        return orderService.view(id);
+    }
+    
+    @PutMapping(path="/orders/{id}")
+    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Order order) {
+        boolean flag = orderService.update(id, order);
+        String msg = flag ? "Order updated successfully" : "Order updation failed";
+
+        return ResponseEntity.ok(msg);
+    }
+
+    @DeleteMapping(path="/orders/{id}")
+    public ResponseEntity<String> delete(@PathVariable int id) {
+        boolean flag = orderService.delete(id);
+        String msg = flag ? "Order deleted successfully" : "Order deletion failed";
+
+        return  ResponseEntity.ok(msg);
+    }
 
 }
