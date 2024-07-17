@@ -1,0 +1,4 @@
+spring.application.name=sboot-core-labs
+
+#Custom Configuration
+greetings.message=Welcome to Spring Boot!!! Externalized Configuration Works!!!

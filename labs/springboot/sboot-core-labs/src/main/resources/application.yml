@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sboot-core-labs
+  profiles:
+    active: dev
+
+greetings:
+  message: Welcome to Spring Boot YAML configuration!!!
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+greetings:
+  message: Welcome to Spring Boot DEV YAML configuration!!!
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+
+greetings:
+  message: Welcome to Spring Boot QA YAML configuration!!!
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+greetings:
+  message: Welcome to Spring Boot PROD YAML configuration!!!
