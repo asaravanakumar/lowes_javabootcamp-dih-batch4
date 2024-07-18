@@ -12,6 +12,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
 
     public List<Order> findByCategoryAndQuantity(String category, int quantity);
 
-    @Query("SELECT o.category, count() FROM Order GROUP BY o.category")
+    @Query("SELECT o.category, count(*) FROM Order o GROUP BY o.category")
     public Map<String,Integer> getCategoryWiseCount();
 }
