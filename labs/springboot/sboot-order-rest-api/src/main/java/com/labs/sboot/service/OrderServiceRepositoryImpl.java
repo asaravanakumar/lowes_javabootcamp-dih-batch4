@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @Primary
@@ -41,5 +43,10 @@ public class OrderServiceRepositoryImpl implements OrderService {
     @Override
     public Collection<Order> viewAll() {
         return orderRepo.findAll();
+    }
+
+    @Override
+    public List<Map<String, Integer>> getCategoryWiseCount() {
+        return orderRepo.getCategoryWiseCount();
     }
 }

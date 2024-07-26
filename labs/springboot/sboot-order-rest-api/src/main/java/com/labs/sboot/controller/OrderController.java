@@ -13,6 +13,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -81,6 +83,12 @@ public class OrderController {
             response = new ResponseMessage("Failure", "Order deletion failed");
             return ResponseEntity.internalServerError().body(response);
         }
+    }
+
+    @GetMapping(path="/orders/stats")
+    public ResponseEntity<?> stats() {
+        List<Map<String, Integer>> catWiseCount = orderService.getCategoryWiseCount();
+        return ResponseEntity.ok(catWiseCount);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

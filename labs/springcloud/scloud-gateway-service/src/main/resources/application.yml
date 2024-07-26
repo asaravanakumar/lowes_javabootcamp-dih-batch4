@@ -1,0 +1,47 @@
+server:
+  port: 8111
+
+spring:
+  application:
+    name: scloud-gateway-service
+  cloud.gateway.mvc:
+    routesMap:
+      configRoute1:
+#        uri: http://localhost:9091
+        uri: lb://scloud-greetings-service
+        predicates:
+          - Path=/greetings
+#          - Method=GET
+#          - Query=type
+
+      configRoute2:
+        uri: lb://scloud-greetings-service
+        predicates:
+          - Path=/api/greetings
+        filters:
+          - StripPrefix=1
+
+      configRoute3:
+        uri: lb://scloud-product-service
+        predicates:
+          - Path=/products/**
+          - Method=GET,POST,PUT,DELETE
+#        filters:
+#          - PrefixPath=/api
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+# Enable all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+
