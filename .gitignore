@@ -3,6 +3,7 @@
 *.springbeans
 *.iml
 **/*.settings
+**/*.smarttomcat
 **/*.idea
 **/target
 **/bin
