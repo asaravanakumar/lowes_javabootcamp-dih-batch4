@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: sboot-security-labs
+
+  security:
+    user:
+      name: lowes
+      password: bangalore
+
+server:
+  port: 6060
+
